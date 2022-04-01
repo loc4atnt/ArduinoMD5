@@ -40,6 +40,7 @@ class MD5
 {
 public:
 	MD5();
+	static String str_make_str(String str);
 	static unsigned char* make_hash(char *arg);
 	static unsigned char* make_hash(char *arg,size_t size);
 	static char* make_digest(const unsigned char *digest, int len);

@@ -7,7 +7,7 @@ one to generate the hex encoding of the hash, which is frequently used.
 void setup()
 {
   //initialize serial
-  Serial.begin(9600);
+  Serial.begin(115200);
   //give it a second
   delay(1000);
   //generate the MD5 hash for our string
@@ -23,4 +23,7 @@ void setup()
 
 void loop()
 {
+  Serial.print("MD5 of \"im loc4atnt\": ");
+  Serial.println(MD5::str_make_str("im loc4atnt"));
+  while(true);
 }

@@ -20,6 +20,15 @@ char* MD5::make_digest(const unsigned char *digest, int len) /* {{{ */
 	return md5str;
 }
 
+String MD5::str_make_str(String str) {
+	unsigned char* hash=MD5::make_hash((char*)str.c_str());
+  char *md5str = MD5::make_digest(hash, 16);
+  free(hash);
+  String md5String = String(md5str);
+  free(md5str);
+	return md5String;
+}
+
 /*
  * The basic MD5 functions.
  *
